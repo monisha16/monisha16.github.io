@@ -4,11 +4,13 @@
 	box-sizing: border-box;
   color: white;
 	font-family: 'Space Mono', monospace;
+	
 
 }
 
 body {
 	background-color: #202040;
+	overflow-x: hidden;
 }
 
 
