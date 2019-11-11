@@ -4,6 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Space+Mono&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<link rel="stylesheet" href="./style.css" />
@@ -21,7 +26,7 @@
 			<nav class="navigator">
 				<ul class="nav-link">
 					<li><a class="nav-link login-button" href="#">LOGIN</a></li>
-					<li><a class="nav-link about-button" href="#">GAMES</a></li>
+					<li><a class="nav-link about-button" href="#bottom">CONTACT US</a></li>
 					<li><a class="nav-link contact-button" href="#">ABOUT US</a></li>
 				</ul>
 			</nav>
@@ -96,44 +101,41 @@
 					<div class="close">+</div>
 					<div class="sign-up-form">
 
-							<form action="">
+							<form action="signup.php" method="POST" >
 								<ul class="user">
 									<li class="user2"><i class="fa fa-user "></i></li>
-									<li class="user1"><input class="user4" type="text" placeholder="Name"></li>
+									<li class="user1"><input class="user4" type="text" name="uname" placeholder="Name" required></li>
 								</ul>
 
 								<ul class="email">
 									<li class="email2"><i class="fa fa-envelope"></i></li>
-								<li class="email1"><input class="email4" type="email" placeholder="E-Mail"></li>
+								<li class="email1"><input class="email4" type="email" name="mail" placeholder="Email" required></li>
 								</ul>
 
 								<ul class="pass">
 										<li class="pass2"><i class="fa fa-lock"></i></li>
-										<li class="pass1"><input class="pass4" type="password" placeholder="Password"></li>
+										<li class="pass1"><input class="pass4" type="password" placeholder="Password" name="pass" required></li>
 								</ul>
+						
 
-								<ul class="pass">
-									  	<li class="pass2"><i class="fa fa-lock"></i></li>
-											<li class="pass1"><input class="pass4" type="password" placeholder="Re type password"></li>
-								</ul>
-
-								<button href="#" class="submit-signup-button">Submit</button>
+								<button type="submit" class="submit-signup-button" value="submit"> SUBMIT </button>
 							</form>
 
 					</div>
 
+
 					<div class="login-form">
 
 
-						<form action="">
+						<form action="login.php" method="POST">
 							<ul class="email">
 								<li class="email2"><i class="fa fa-envelope"></i></li>
-							<li class="email1"><input class="email4" type="email" placeholder="E-Mail"></li>
+							<li class="email1"><input class="email4" type="email" placeholder="E-Mail" name= "email"></li>
 							</ul>
 
 							<ul class="pass">
 									<li class="pass2"><i class="fa fa-lock"></i></li>
-									<li class="pass1"><input class="pass4" type="password" placeholder="Password"></li>
+									<li class="pass1"><input class="pass4" type="password" placeholder="Password" name="password"></li>
 							</ul>
 
 							<button href="#" class="submit-login-button">Login</button>
@@ -141,45 +143,28 @@
 
 
 					</div>
-
-					<div class="contact-us">
-						<ul class="user">
-							<li class="user2"><i class="fa fa-user "></i></li>
-							<li class="user1"><input class="user4" type="text" placeholder="Name"></li>
-						</ul>
-
-						<ul class="email">
-							<li class="email2"><i class="fa fa-envelope"></i></li>
-						<li class="email1"><input class="email4" type="email" placeholder="E-Mail"></li>
-						</ul>
-
-						<textarea rows="8" class="feedback" placeholder="Your feedback"></textarea>
-
-						<button href="#" class="submit-feedback-button">SEND</button>
-
-
-					</div>
+					
 				</div>
 
 			</div>
 		</main>
 
-	<footer class="social-footer">
-  <div class="social-footer-icons">
+	<div class="social-footer" >
+  	<div id="bottom" class="social-footer-icons">
     <ul class="linkk">
       <li><a class="linkk" href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
       <li><a class="linkk" href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
       <li><a class="linkk" href="https://www.github.com/kaushikkateel"><i class="fa fa-github" aria-hidden="true"></i></a></li>
       <li><a class="linkk" href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-    </ul>
-		<ul class="feedbackdiv">
-			<li><a class="feedbackdiv2" id="f" href="#">feedback</a></li>
-		</ul>
+    <!-- </ul>
+		<ul class="feedbackdiv" id='f'>
+			<li><a href="mailto:monishatarkar16@gmail.com?Subject=Hello%20again">feedback</a></li>
+		</ul> -->
   </div>
 
-</footer>
+</div>
 
-<script	src="./main.js">
+<script	src="./main1.js">
 
 </script>
 

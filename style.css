@@ -4,15 +4,16 @@
 	box-sizing: border-box;
   color: white;
 	font-family: 'Space Mono', monospace;
-	
-
 }
 
 body {
 	background-color: #202040;
 	overflow-x: hidden;
 }
-
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 header {
 	top:0px;
@@ -24,9 +25,17 @@ header {
 	z-index: 1000;
 	align-items: center;
 	transition: 0.3s;
-	font-family: 'Space Mono', monospace;
-font-family: 'Roboto', sans-serif;
+
 }
+.hosted-table{
+
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+}
+
 
 .logo-container,
 .nav-link,
@@ -45,7 +54,7 @@ font-family: 'Roboto', sans-serif;
 }
 
 nav {
-	flex: 2;
+	flex: 1;
 	transition: 0.5s;
 }
 
@@ -80,6 +89,7 @@ header.black {
 	margin: auto;
 	min-height: 100vh;
 	align-items: center;
+
 }
 
 .introduction {
@@ -112,14 +122,18 @@ header.black {
 	flex: 1;
 	display: flex;
 	justify-content: center;
-	height: 65vh;
+	height:60vh;
+
 }
 
 .cover img {
 	height: 140%;
 	filter: drop-shadow(0px 5px 3px black);
-	animation: drop 1.5s ease;
+	animation: drop 2.5s ease;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
+
 .one .grad-hex {
 	position: absolute;
 	top: 0px;
@@ -164,7 +178,7 @@ header.black {
 
 .three .right-hex {
 	position: absolute;
-	bottom: -1300px;
+	bottom: -1375px;
 	right: -100px;
 	z-index: -1;
 	height: 100%;
@@ -288,12 +302,12 @@ header.black {
 
 }
 
-footer {
-	display: flex;
+.social-footer {
+	position: relative;
+	margin-top: 150px;
+	bottom: 0%;
 	width: 100%;
-	height: 20vh;
-	margin-top: 20vh;
-	align-items: center;
+	height: 10vh;
 	background-color: #323b40;
 }
 .feedbackdiv{
@@ -309,19 +323,29 @@ footer {
 }
 
 .social-footer-icons {
-	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	width: 100%;
+	height: 100%;
+
+
 }
 
 .linkk{
 	justify-content: space-around;
 	list-style: none;
 	display: flex;
+	width: 100%;
+    height: 100%;
+    align-items: center;
 }
 
 .linkk{
 	color: #b030b0;
-	font-size: 18px;
+	font-size: 25px;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .bg-modal {
@@ -374,8 +398,8 @@ input {
 
 @keyframes drop {
 	0% {
-		opacity: 0;
-		transform: translateY(-80px);
+		opacity: 0.8;
+		transform: translateY(-30px);
 	}
 	100% {
 		opacity: 1;
@@ -414,4 +438,67 @@ input {
 	.big-circle {
 		opacity: 0.2;
 	}
+}
+
+.games-main{
+	margin-top: 115px;
+}
+.games-list{
+	align-items: center;
+	justify-content: center;
+	position:relative;
+
+}
+.games{
+	position: relative;
+	margin:100px;
+	margin-bottom: 80px;
+	margin-top: 2px;
+	float:left;
+	z-index: 2;
+	transition: .5s ease;
+	align-items: center;
+	cursor: pointer;
+}
+
+.games:hover{
+
+	z-index: 2;
+	box-shadow: 10px 10px 5px black;
+	transform: scale(1.3);
+
+}
+
+.games:hover .csgo{
+	opacity: 1;
+}
+.icons{
+		filter: drop-shadow(0px 3px 3px 	  #8c8c8c);
+		margin-right: 20px;
+		margin-left: 40px;
+
+}
+.game-name{
+margin-right: 20px;
+font-weight: 1000;
+letter-spacing: 4px;
+
+
+}
+.csgo{
+	position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ height: 100%;
+ width: 100%;
+ opacity: 0;
+ transition: .5s ease;
+ background-color: rgba(0,0,0,0.5);
+	display: flex;
+ justify-content: center;
+ align-items: center;
+
+
 }

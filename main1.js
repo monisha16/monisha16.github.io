@@ -35,16 +35,16 @@ document.querySelector('.close').addEventListener("click", function() {
 
 
 });
-document.getElementById('f').addEventListener("click", function(){
-  document.querySelector('.bg-modal').style.display = "flex";
-  $(".login-form").hide();
-  $(".sign-up-form").hide();
-  $(".signup").hide();
-  $(".login").hide();
-  $(".contact-us").show();
-  document.querySelector('.modal-contents').style.height = "425px";
+// document.getElementById('f').addEventListener("click", function(){
+//   document.querySelector('.bg-modal').style.display = "flex";
+//   $(".login-form").hide();
+//   $(".sign-up-form").hide();
+//   $(".signup").hide();
+//   $(".login").hide();
+//   $(".contact-us").show();
+//   document.querySelector('.modal-contents').style.height = "425px";
 
-});
+// });
 var last=0;
 
 $(window).on('scroll', function(){
