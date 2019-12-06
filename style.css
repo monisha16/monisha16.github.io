@@ -10,10 +10,7 @@ body {
 	background-color: #202040;
 	overflow-x: hidden;
 }
-dl, ol, ul {
-    margin-top: 0;
-    margin-bottom: 0;
-}
+
 
 header {
 	top:0px;
@@ -27,15 +24,6 @@ header {
 	transition: 0.3s;
 
 }
-.hosted-table{
-
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	align-items: center;
-}
-
 
 .logo-container,
 .nav-link,
@@ -302,12 +290,12 @@ header.black {
 
 }
 
-.social-footer {
-	position: relative;
-	margin-top: 150px;
-	bottom: 0%;
+footer {
+	display: flex;
 	width: 100%;
-	height: 10vh;
+	height: 20vh;
+	margin-top: 20vh;
+	align-items: center;
 	background-color: #323b40;
 }
 .feedbackdiv{
@@ -323,29 +311,20 @@ header.black {
 }
 
 .social-footer-icons {
-	display: flex;
-	justify-content: space-around;
-	align-content: center;
-	width: 100%;
-	height: 100%;
-
-
+	flex: 1;
 }
 
 .linkk{
 	justify-content: space-around;
 	list-style: none;
 	display: flex;
-	width: 100%;
-    height: 100%;
-    align-items: center;
 }
 
 .linkk{
 	color: #b030b0;
-	font-size: 25px;
+	font-size: 18px;
 	text-decoration: none;
-	cursor: pointer;
+	cursor: pointer;;
 }
 
 .bg-modal {

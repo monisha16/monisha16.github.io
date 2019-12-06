@@ -1,8 +1,8 @@
 <?php
 
-session_start();
 
-$conn = mysqli_connect('localhost','root','','web_proj');
+
+$conn = mysqli_connect('localhost','root','','webproject');
 
 if($conn==false)
 {

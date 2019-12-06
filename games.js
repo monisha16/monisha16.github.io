@@ -1,7 +1,7 @@
 var last=0;
 
 $(window).on('scroll', function(){
-console.log($(window).scrollTop());
+
 
   if($(window).scrollTop()<last){
     document.querySelector('.h').style.top='0px';
