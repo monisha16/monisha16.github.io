@@ -2,7 +2,7 @@
 
 
 
-$conn = mysqli_connect('localhost','root','','webproject');
+$conn = mysqli_connect('localhost','root','','web_proj');
 
 if($conn==false)
 {

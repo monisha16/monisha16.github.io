@@ -6,8 +6,12 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Space+Mono&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="./aboutus.css" />
+		<link rel="stylesheet" type="text/css" href="swiper.min.css">	
+		<link rel="stylesheet" href="./aboutus.css" />	
 		<script src="https://code.jquery.com/jquery-3.4.1.js"> </script>
+		<script type="text/javascript" src="swiper.min.js"></script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 		<title> Stadia of Olympus </title>
 			<link rel="shortcut icon" href="./img/logo.ico" />
 	</head>
@@ -25,56 +29,74 @@
 				</ul>
 			</nav>
 		</header>
-
 		<main>
 
-
-	
-					
-			<div class="one">
-				<img class="grad-hex" src="./img/1.svg" alt="" />
-				<!-- <img class="right-hex" src="./img/2.svg" alt="" /> -->
-				<img class="left-hex" src="./img/3.svg" alt="" />
-				<!--<img class="pink-hex" src="./img/4.svg" alt="" />-->
-			</div>
-			<div class="two">
+				<div class="one">
 					<img class="grad-hex" src="./img/1.svg" alt="" />
 					<img class="left-hex" src="./img/3.svg" alt="" />
-			</div>
-			<div class="about">
-				<p>
-					The team of Stadia of Olympus consists of 3 great coders,<br/> who are from Sahyadri College of Engineering and Management
-				</p>
-			</div>
-			<div class="glow">
-					<a href="https://github.com/SiddanthNayak"><h1>SIDDANTH</h1></a>
-					<a href="https://github.com/monisha16"><h1>MONISHA</h1></a>
-					<a href="https://github.com/kaushikkateel"><h1>KAUSHIK</h1></a>
-					   
-			</div>
-			
-            <!--<div>
-                <img class="moni1" src="./img/aboutus/moniW.png"/>
-			</div>
-			<div>
-                <img class="kaush"src="./img/aboutus/kaushW.png"/>
-			</div>
-			<div>
-                <img class="sid" src="./img/aboutus/sidW.png"/>
-            </div> -->
-
-	
-
-
-				
+				</div>
+				<div class="two">
+						<img class="grad-hex" src="./img/1.svg" alt="" />
+						<img class="left-hex" src="./img/3.svg" alt="" />
+				</div>
 		</main>
-
-
-
-<script	src="./main.js">
-
-</script>
-
-
-	</body>
+		<div class="glow">
+				<h3> Our Team </h3>
+			</div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					  <div class="swiper-slide">
+						  <div class="moni1">
+								<a href="https://github.com/monisha16"><img  src="./img/aboutus/kk.jpeg"/></a>
+						  </div>
+						  <div class="details">
+							<h3 class="sub">MONISHA<br></h3>
+							<h4>Web Designer</h4>
+						  </div>
+					  </div>
+					  <div class="swiper-slide">
+							<div class="moni1">
+									<a href="https://github.com/kaushikkateel"><img  src="./img/aboutus/kaush.jpeg"/></a>
+							  </div>
+							  <div class="details">
+									<h3 class="sub">KAUSHIK<br></h3>
+									<h4>Web Designer</h4>
+							  </div>
+					  </div>
+					  <div class="swiper-slide">
+							<div class="moni1">
+									<a href="https://github.com/SiddanthNayak"><img src="./img/aboutus/sid1.jpeg"/></a>
+							  </div>
+							  <div class="details">
+									<h3 class="sub">SIDDANTH<br></h3>
+									<h4>Web Designer</h4>
+							  </div>
+					  </div>
+				</div>
+			</div>
+				
+				  <!-- Swiper JS -->
+				  <script src="../package/js/swiper.min.js"></script>
+				
+				  <!-- Initialize Swiper -->
+				  <script>
+					var swiper = new Swiper('.swiper-container', {
+					  effect: 'coverflow',
+					  grabCursor: true,
+					  centeredSlides: true,
+					  slidesPerView: 'auto',
+					  coverflowEffect: {
+						rotate: 50,
+						stretch: 0,
+						depth: 100,
+						modifier: 1,
+						slideShadows : true,
+					  },
+					 
+					});
+				  </script>
+			
+		
+<script	src="./main.js"></script>
+</body>
 </html>

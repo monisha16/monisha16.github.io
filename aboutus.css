@@ -2,7 +2,7 @@
 	margin:0px;
 	padding: 0px;
 	box-sizing: border-box;
-  color: white;
+    color: white;
 	font-family: 'Space Mono', monospace;
 	text-decoration: none;
 }
@@ -10,8 +10,48 @@
 body {
 	background-color: #202040;
 	overflow-x: hidden;
+	/* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+
+  }
+
+  .glow {
+	/* font-size: 10px; */
+	color: #fff;
+	margin-top: 8vh;
+	display:flex;
+	justify-content:space-evenly;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+	/* text-decoration: none; */
+  }
+
+  .swiper-container {
+	width: 100%;
+	padding-top: 40px;
+	padding-bottom: 50px;
+	
+  }
+  .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 380px;
+	height: 380px;
+	text-align: center;
+	background:transparent;
+	/* filter: drop-shadow(2px 5px 2px black); */
+		
+  }
+  .swiper-slide .moni1{
+  overflow:hidden;
+  /* border-radius: 0.5em; */
 }
 
+.sub{
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+}
 
 header {
 	top:0px;
@@ -82,24 +122,20 @@ header.black {
 
 }
 
-
-
-
-.cover {
+/* .cover {
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	height:60vh;
 
 }
-
 .cover img {
 	height: 140%;
 	filter: drop-shadow(0px 5px 3px black);
 	animation: drop 2.5s ease;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-}
+} */
 
 .one .grad-hex {
 	position: absolute;
@@ -143,34 +179,6 @@ header.black {
 	height: 70%;
 }
 
-/* .moni1{
-	position: absolute;
-	top: 40%;
-	right: 41%;
-	z-index: -1;
-	height: 30%;
-	/* opacity: 0.4; */
-} */
-.about {
-	font-size: 20px;
-	color:white;
-	/* display:flex;
-	text-align: center;
-	vertical-align: center; */
-
-
-}
-.glow {
-	font-size: 10px;
-	color: #fff;
-	margin-top: 78vh;
-	display:flex;
-	justify-content:space-evenly;
-	-webkit-animation: glow 1s ease-in-out infinite alternate;
-	-moz-animation: glow 1s ease-in-out infinite alternate;
-	animation: glow 1s ease-in-out infinite alternate;
-	/* text-decoration: none; */
-  }
   
   @-webkit-keyframes glow {
 	from {
@@ -297,10 +305,10 @@ input {
 	.cover img {
 		height: 80%;
 	}
-	.small-circle,
+	/* .small-circle,
 	.medium-circle,
 	.big-circle {
 		opacity: 0.2;
-	}
+	} */
 }
 
