@@ -2,24 +2,16 @@
 
 require_once "config.php";
 
-$user=$_POST['uname'];
-$email=$_POST['mail'];
-$pass=$_POST['pass'];
+$eid=$_GET['eid'];
+$gid=$_GET['gid'];
+session_start();
+$uid=$_SESSION['uid'];
 
-$sql="SELECT * FROM user WHERE uemail='$email' AND upwd='$pass' "; 
-$result=mysqli_query($conn,$sql);
-$numrows=mysqli_num_rows($result);
-if($numrows==1)
-{
-    echo "User Already Exists";
-    
-}
-else
-{ 
-    $sql="INSERT INTO user(uname,uemail,upwd) VALUES('$user','$email','$pass')";
+
+    $sql="INSERT INTO joined( eid,uid,pay) VALUES('$eid','$uid','n')";
     mysqli_query($conn,$sql);
-    header("Location: games.html");
+    header("Location: events.php?gid=$gid");
 
-}
+
 
 ?>

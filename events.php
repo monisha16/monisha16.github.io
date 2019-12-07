@@ -24,7 +24,7 @@
 		</div>
 		<nav class="navigator">
 			<ul class="nav-link">
-				<li><a class="nav-link home-button" href="index.html">HOME</a></li>
+				<li><a class="nav-link home-button" href="logout.php">LOGOUT</a></li>
 				<li>
 					<?php
 						$gid = $_GET["gid"];
@@ -56,24 +56,28 @@
 	<ul class="events-list" style='overflow:hidden; overflow-y:scroll; height:100%; width:100%;'>
 
 	<?php
+	session_start();
+	$uid=$_SESSION['uid'];
 	require_once 'config.php';
 	$gid = $_GET["gid"];
 	$img="img/games-icon/".$gid.".png";
 	// $bgg=" \" url('img/games-icon/".$gid.".jpg')\"";
 	// // $bg=" " ".$bgg." " ";
 	// echo "<script> $('.body').css('background-image', $bgg);</script>";
-	$sql = "SELECT ename,eloc,edate FROM hosted WHERE gid=$gid";
+	$sql = "SELECT eid,ename,eloc,edate FROM hosted WHERE gid=$gid";
+	$sql2="SELECT eid FROM joined WHERE uid=$uid";
+	$res = $conn->query($sql2);
+	$eids=Array();
+	while ($r = $res->fetch_array()) {
+		array_push($eids,$r['eid']);
+	}
+	// print_r($eids);
+
 	if ($result = $conn->query($sql)) {
 			if ($result->num_rows > 0) {
 
 					while ($row = $result->fetch_array()) {
-							// echo "<tr style='background:gray; position:absolute'>";
-							// echo "<td><img src='img\games-icon\icon-48x48-medium (4).png' width='75px'></td>";
-							// echo "<td> <span style='font-size: 32px'>${row['ename']}</span><br>${row['eloc']}</td>";
-							// echo "<td><button style='color:black;'>Join</button></td>";
-							// //     echo "<a href='". $row['link'] ."' target='_blank'>Veiw Resume</a>";
-							// // echo "</td>";
-
+							if (!in_array($row['eid'], $eids)){
 							echo "<li class='l1'><ul class='u'>";
 							echo "<li class='l2'> <img src=$img width='75px' style='filter: drop-shadow(0px 5px 3px black);	'></li>";
 							echo "<li class='l3'>
@@ -90,9 +94,10 @@
 														</span>
 												</div>
 									</li>";
-							echo "<li class='l4'><a class='j'>JOIN</a></li>";
+							echo "<li class='l4'><a class='j' href='join.php?eid=${row['eid']}&gid=$gid'>JOIN</a></li>";
 							echo "</ul></li>";
 						}
+					}
 					;
 					// Free result set
 					$result->free();
@@ -112,7 +117,7 @@
 
 
 	</main>
-	<div class="bg-modal">
+	<!-- <div class="bg-modal">
 				<div class="modal-contents">
 					<div class="close">+</div>
 					<div class="sign-up-form">
@@ -120,7 +125,7 @@
 							<form class="m" action="join.php" method="POST" >
 								<h4>Enter Team Details</h4>
 								<ul class="user">
-									
+
 									<input class="user4" type="text" name="tname" placeholder="Team Name" required>
 								</ul>
 
@@ -133,7 +138,7 @@
 
 					</div>
 	</div>
-	</div>
+	</div> -->
 	<div class='somespace' style='width: 100%; height: 10vh;' >
 
 	</div>
@@ -151,7 +156,7 @@
 	</div>
 
 </footer>
-	<script src="./games.js">
+	<script src="./events.js">
 
 	</script>
 

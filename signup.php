@@ -63,26 +63,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check input errors before inserting in database
     if (empty($email_err) && empty($pass_err) && empty($name_err)) 
     {
-        $sql="INSERT INTO user(uname,uemail,upwd) VALUES(?,?,?)";
-        // $sql2 = "INSERT into users (email, name, phone, dob, sex) values(?,?,?,?,?)";
-        if ($stmt = $conn->prepare($sql)) 
+        $sql = "SELECT uemail FROM user WHERE uemail='$input_email'";
+        $run=mysqli_query($conn,$sql);
+        if(mysqli_num_rows($run)==0)
         {
-            // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("sss",$_POST["uname"],$_POST['mail'], $_POST['pass']);
-            if ($stmt->execute())
-                 {
-                    header("location: games.html");
-                    exit();
-                } 
+            $sql="INSERT INTO user(uname,uemail,upwd) VALUES(?,?,?)";
+            // $sql2 = "INSERT into users (email, name, phone, dob, sex) values(?,?,?,?,?)";
+            if ($stmt = $conn->prepare($sql)) 
+            {
+                // Bind variables to the prepared statement as parameters
+                $stmt->bind_param("sss",$_POST["uname"],$_POST['mail'], $_POST['pass']);
+                if ($stmt->execute())
+                    {
+                        $sql = "SELECT uid FROM user WHERE uemail='$email' AND upwd='$pass' ";
+                        $run=mysqli_query($conn,$sql);
+                        $b=mysqli_fetch_row($run);
+                        $uid=$b[0];
+                        session_start();
+                        $_SESSION['uid']=$uid;
+                        header("Location: games.html");
+                        exit();
+                    } 
+                else 
+                    {
+                        echo "Something went wrong. Please try again later.";
+                    } 
+            }   
             else 
-                {
-                    echo "Something went wrong. Please try again later.";
-                } 
-        }   
-        else 
-        {
-            $error = $conn->errno . ' ' . $conn->error;
-            echo $error; // 1054 Unknown column 'foo' in 'field list'
+            {
+                $error = $conn->errno . ' ' . $conn->error;
+                echo $error; // 1054 Unknown column 'foo' in 'field list'
+            }
+        }
+        else{
+            echo "<script> alert('User already exists.');";
+            echo 'window.location= "index.php"';
+            echo "</script>";
         }
     }
 

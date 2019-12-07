@@ -17,7 +17,7 @@
     </div>
     <nav class="navigator">
       <ul class="nav-link">
-        <li><a class="nav-link home-button" href="index.html">HOME</a></li>
+        <li><a class="nav-link home-button" href="logout.php">LOGOUT</a></li>
         <li style='display:flex;'>
 
 					<a class="nav-link opt1" href="#">HOSTED&nbsp;</a>
@@ -70,9 +70,9 @@
 					// Close connection
 					// $conn->close();
 					?>
-            <li class="">
+            <!-- <li class="">
               <div class="s">	<button  class="edit-profile-button" value="submit" href="#"> EDIT PROFILE </button></div>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="mygames" style='width:100%; height:100%; margin-bottom: 1vh; '>

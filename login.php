@@ -21,7 +21,7 @@
         else
         {
             echo "<script>alert('Give correct details');";
-            echo 'window.location= "index.html"';
+            echo 'window.location= "index.php"';
             echo "</script>";
         }
     }

@@ -17,7 +17,7 @@
     </div>
     <nav class="navigator">
       <ul class="nav-link">
-        <li><a class="nav-link home-button" href="index.html">HOME</a></li>
+        <li><a class="nav-link home-button" href="logout.php">LOGOUT</a></li>
         <!-- <li><a class="nav-link profile-button" href="#">MY PROFILE</a></li> -->
       </ul>
     </nav>
